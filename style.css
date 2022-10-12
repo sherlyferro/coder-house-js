@@ -1,0 +1,12 @@
+.titulo{
+    text-align: center;
+    color: rgb(11, 42, 247);
+}
+.container{
+display: flex;
+flex-direction: row;
+margin: 20px;
+}  
+.productos{
+    margin-left: 20px;
+}
