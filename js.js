@@ -1,43 +1,71 @@
+let Edad = parseInt(prompt('Ingrese su edad por favor'));
 
-let ingreseEdad=Number(prompt('Ingrese su edad por favor '));
-if(ingreseEdad>17){
-    alert('¡Felicidades¡   Puedes acceder a nuestra pagina' )
+if (Edad > 17) {
+    alert('Felicidades usted puede acceder a ver los tours');
+} else {
+    alert('Lo sentimos usted es menor de edad');
+}
+
+
+// par la condicional if //
+let pedirPresupuesto = prompt('Ingrese su presupuesto para el tour');
+
+if (pedirPresupuesto>= 1000) {
+    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours Machupicchu')
+} else if ((pedirPresupuesto < 1000) && (pedirPresupuesto > 801)){
+    console.log('Con' +pedirPresupuesto+'  usted puede acceder al tours2 de santa teresa')
+}else if ((pedirPresupuesto <= 699)&&  (pedirPresupuesto > 500)){
+    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours3 de Quillabamba')
+}else if((pedirPresupuesto > 800)&&(pedirPresupuesto >=700)){
+    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours4  de la laguna HUmaytay')
 }else{
-    alert('lo sentimos usted es menor de edad');
- 
+    console.log( 'Lo sentimos   con ' + pedirPresupuesto +' soles  no tenemos tour disponibles')
+}
+//para lo funcion for ,mostrar todos los tours//
+
+let tour$1 = {
+    nombre: 'Machupicchu ',
+    costo: 1000,
+}
+let tour$2 = {
+    nombre: 'Santa Teresa',
+    costo: 800,
+}
+let tour$3 = {
+    nombre: 'Quillabamba',
+    costo: 500,
+}
+let tour$4 = {
+    nombre: 'Laguna Humaytay',
+    costo: 700,
 }
 
-//suma de producos  elegidos por el cliente//
+let tours = [tour$1, tour$2, tour$3, tour$4];
 
-let producto1 = {
-    nombre: 'pantalon',
-    precio: 40
+for (let index = 0; index < tours.length; index++) {
+    const mostrartours = tours[index];
+    console.log(mostrartours);
 }
 
-let producto2 = {
-    nombre: 'camisa',
-    precio: 30
-}
-let producto3 = {
-    nombre: 'blusa',
-    precio: 40
-}
-let producto4 = {
-    nombre: 'zapato',
-    precio: 80
-}
-let producto5 = {
-    nombre: 'polos',
-    precio: 15
-}
-let productos = [producto1, producto2, producto3, producto4, producto5];
-console.log(productos);
 
-let total = 0
-for (let i = 0; i < productos.length; i++) {
-    total=total+productos[i].precio;
+let pedircomboTour = prompt('¿  Desea ver la oferta de los  4 tours ?').toLowerCase();
+
+function sumarCostodetodoslosTour() {
+    let sumadeTour = (tour$1.costo + tour$2.costo + tour$3.costo+ tour$4.costo) - ((tour$1.costo + tour$2.costo + tour$3.costo + tour$4.costo) * 0.1)
+    return sumadeTour
 }
-document.write ('La cantidad a pagar es de '+total+ 'soles');
+
+if(pedircomboTour=='si'){
+    console.log("El precion total -10% de los 4  tours es : ", sumarCostodetodoslosTour())
+}
+
+
+
+
+
+
+
+
 
 
 
