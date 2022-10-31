@@ -2,14 +2,10 @@
 
 
 /////////////////////////////////////////////////////////////////////////ultimo ejemplo
-/*let Edad = parseInt(prompt('Ingrese su edad por favor'));
+let Edad = parseInt(prompt('Ingrese su edad por favor'));
 
 if (Edad > 17) {
-    alert('Felicidades usted puede acceder a ver los tours');
-} else {
-    alert('Lo sentimos usted es menor de edad');
-}*/
-/*let pedirPresupuesto = prompt('Ingrese su presupuesto para el tour');*/
+    alert('Felicidades usted puede acceder a ver los productos');
 
 const productosTienda = [
     { id: 0, nombre: 'carteras', precio: 120, stock: 800 },
@@ -28,13 +24,13 @@ let mensaje = ''
 productos.forEach(producto => {
     mensaje = mensaje + ` id : ${producto.id}  Nombre : ${producto.nombre}  Precio : ${producto.precio} \n`
 })
-alert('Tenemos los siguientes productos  para usted \n' + mensaje)
+alert('Tenemos los siguientes productos en ofertapara usted \n' + mensaje)
 
 let carrito = [];
 
 
 function agregaCarrito() {
-    let elegirProducto = prompt('Si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n y  para salir introdusca el número 100 ')
+    let elegirProducto = prompt('Si desea elegir algun producto coloque el numero correspondiente a : 0  ,  1 ,2  ,3  ,4 o 5 \n y  para salir introdusca el número 100 ')
     while (isNaN(elegirProducto)) {
         alert('Porfavor ingrese solo números')
         
@@ -77,7 +73,7 @@ function agregaCarrito() {
                 alert('No tenemos ese producto')
                 break
         }
-        elegirProducto = prompt('si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n para salir introdusca el número 100 ')
+        elegirProducto = prompt('Si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n para salir introdusca el número 100 ')
     }
     
     alert('¡carrito cerrado!')
@@ -99,7 +95,9 @@ function mostrarCarrito() {
  
 agregaCarrito();
 
-
+} else {
+    alert('Lo sentimos usted es menor de edad no le podemos mostrar las ofertas');
+}
 
 
 
