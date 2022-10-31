@@ -1,72 +1,103 @@
-let Edad = parseInt(prompt('Ingrese su edad por favor'));
+
+
+
+/////////////////////////////////////////////////////////////////////////ultimo ejemplo
+/*let Edad = parseInt(prompt('Ingrese su edad por favor'));
 
 if (Edad > 17) {
     alert('Felicidades usted puede acceder a ver los tours');
 } else {
     alert('Lo sentimos usted es menor de edad');
+}*/
+/*let pedirPresupuesto = prompt('Ingrese su presupuesto para el tour');*/
+
+const productosTienda = [
+    { id: 0, nombre: 'carteras', precio: 120, stock: 800 },
+    { id: 1, nombre: 'polos', precio: 50, stock: 500 },
+    { id: 2, nombre: 'aretes', precio: 30, stock: 400 },
+    { id: 3, nombre: 'llaveros', precio: 10, stock: 580 },
+    { id: 4, nombre: 'sombreros', precio: 70, stock: 200 },
+    { id: 5, nombre: 'pantalones', precio: 110, stock: 700 }
+];
+
+let productos = productosTienda.map(producto => {
+    return { id: producto.id, nombre: producto.nombre, precio: producto.precio }
+
+})
+let mensaje = ''
+productos.forEach(producto => {
+    mensaje = mensaje + ` id : ${producto.id}  Nombre : ${producto.nombre}  Precio : ${producto.precio} \n`
+})
+alert('Tenemos los siguientes productos  para usted \n' + mensaje)
+
+let carrito = [];
+
+
+function agregaCarrito() {
+    let elegirProducto = prompt('Si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n y  para salir introdusca el número 100 ')
+    while (isNaN(elegirProducto)) {
+        alert('Porfavor ingrese solo números')
+        
+        elegirProducto = prompt('Si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n  y para salir introdusca el número 100 ')
+    }
+    
+    while (elegirProducto != 100) {
+        switch (parseInt(elegirProducto)) {
+            case 0:
+                carrito.push(productosTienda[0])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[0].nombre}`)
+               
+                break;
+            case 1:
+                carrito.push(productosTienda[1])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[1].nombre}`)
+               
+                break;
+            case 2:
+                carrito.push(productosTienda[2])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[2].nombre}`)
+               
+                break;
+            case 3:
+                carrito.push(productosTienda[3])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[3].nombre}`)
+               
+                break;
+            case 4:
+                carrito.push(productosTienda[4])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[4].nombre}`)
+                
+                break;
+            case 5:
+                carrito.push(productosTienda[5])
+                alert(`Agregamos a tu carrito el producto ${productosTienda[5].nombre}`)
+               
+                break;
+            default:
+                alert('No tenemos ese producto')
+                break
+        }
+        elegirProducto = prompt('si desea elegir algun producto coloque el numero correspondiente 0  ,  1 ,2  ,3  ,4 o 5 \n para salir introdusca el número 100 ')
+    }
+    
+    alert('¡carrito cerrado!')
+    mostrarCarrito()
 }
 
+let productosCarrito = "vas a llevar :\ n"
+let precioCarrito = 0
 
-// par la condicional if //
-let pedirPresupuesto = prompt('Ingrese su presupuesto para el tour');
 
-if (pedirPresupuesto>= 1000) {
-    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours Machupicchu')
-} else if ((pedirPresupuesto < 1000) && (pedirPresupuesto > 801)){
-    console.log('Con' +pedirPresupuesto+'  usted puede acceder al tours2 de santa teresa')
-}else if ((pedirPresupuesto <= 699)&&  (pedirPresupuesto > 500)){
-    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours3 de Quillabamba')
-}else if((pedirPresupuesto > 800)&&(pedirPresupuesto >=700)){
-    console.log( 'Con' +pedirPresupuesto+'  usted puede acceder al tours4  de la laguna HUmaytay')
-}else{
-    console.log( 'Lo sentimos   con ' + pedirPresupuesto +' soles  no tenemos tour disponibles')
-}
-//para lo funcion for ,mostrar todos los tours//
-
-let tour$1 = {
-    nombre: 'Machupicchu ',
-    costo: 1000,
-}
-let tour$2 = {
-    nombre: 'Santa Teresa',
-    costo: 800,
-}
-let tour$3 = {
-    nombre: 'Quillabamba',
-    costo: 500,
-}
-let tour$4 = {
-    nombre: 'Laguna Humaytay',
-    costo: 700,
+function mostrarCarrito() {
+    for (itemCarrito of carrito) {
+        productosCarrito += `\n - ${itemCarrito.nombre}`
+        precioCarrito += itemCarrito.precio
+    }
+    alert(`Repasemos : \n ${productosCarrito} \n por un total de $: ${precioCarrito}`)
 }
 
-let tours = [tour$1, tour$2, tour$3, tour$4];
-
-for (let index = 0; index < tours.length; index++) {
-    const mostrartours = tours[index];
-    console.log(mostrartours);
-}
-
-
-let pedircomboTour = prompt('¿  Desea ver la oferta de los  4 tours ?').toLowerCase();
-
-function sumarCostodetodoslosTour() {
-    let sumadeTour = (tour$1.costo + tour$2.costo + tour$3.costo+ tour$4.costo) - ((tour$1.costo + tour$2.costo + tour$3.costo + tour$4.costo) * 0.1)
-    return sumadeTour
-}
-
-if(pedircomboTour=='si'){
-    console.log("El precion total -10% de los 4  tours es : ", sumarCostodetodoslosTour())
-}
-
-
-
-
-
-
-
-
-
+ 
+agregaCarrito();
 
 
 
