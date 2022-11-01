@@ -1,12 +1,19 @@
-.titulo{
-    text-align: center;
-    color: rgb(178, 5, 187);
+#contenedorProductos {
+    width: 800px;
+    height: 800px;
+    background-color: aquamarine;
+    display: flex;
+    color: black;
 }
-.container{
-display: flex;
-flex-direction: row;
-margin: 20px;
-}  
-.productos{
-    margin-left: 20px;
+
+.producto {
+    width: 700px;
+    height: 500px;
+    background-color: rgb(251, 139, 242);
+    margin: 5px;
+   border: 1px solid black;
+}
+img{
+    width: 80px;
+    height: 80px;
 }
