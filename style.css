@@ -1,19 +1,22 @@
-#contenedorProductos {
-    width: 800px;
-    height: 800px;
-    background-color: aquamarine;
-    display: flex;
-    color: black;
+body {
+  background: rgb(140, 233, 237);
+  background: linear-gradient(
+    90deg,
+    rgba(140, 233, 237, 1) 12%,
+    rgba(201, 197, 255, 1) 55%,
+    rgba(151, 217, 221, 1) 79%,
+    rgba(50, 245, 233, 1) 100%
+  );
+  text-align: center;
 }
 
-.producto {
-    width: 700px;
-    height: 500px;
-    background-color: rgb(251, 139, 242);
-    margin: 5px;
-   border: 1px solid black;
+
+.lista_productos {
+  font-size: 30px;
+ 
+
 }
-img{
-    width: 80px;
-    height: 80px;
+.img_producto {
+  width: 300px;
+  height: 300px;
 }
