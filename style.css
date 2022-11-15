@@ -1,19 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-  background: rgb(140, 233, 237);
+  background: rgb(228, 184, 237);
   background: linear-gradient(
     90deg,
-    rgba(140, 233, 237, 1) 12%,
-    rgba(201, 197, 255, 1) 55%,
-    rgba(151, 217, 221, 1) 79%,
-    rgba(50, 245, 233, 1) 100%
+    rgba(228, 184, 237, 1) 0%,
+    rgba(224, 150, 232, 1) 0%,
+    rgba(66, 236, 217, 1) 49%,
+    rgba(208, 159, 230, 1) 100%
   );
   text-align: center;
 }
 
-.lista_productos {
-  font-size: 30px;
+#contenedorProductos {
+  width: 1500px;
+
+  background: rgb(228, 184, 237);
+  background: linear-gradient(
+    90deg,
+    rgba(228, 184, 237, 1) 0%,
+    rgba(224, 150, 232, 1) 0%,
+    rgba(66, 236, 217, 1) 49%,
+    rgba(208, 159, 230, 1) 100%
+  );
+  object-fit: cover;
+  display: flex;
+  color: black;
 }
-.img_producto {
-  width: 300px;
-  height: 300px;
+
+.producto {
+  height: 360px;
+  width: 1000px;
+
+  background-color: aliceblue;
+  margin: 5px;
+  border: 1px solid black;
+}
+.titulo {
+  margin: 20px;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(121, 12, 131);
+}
+.descripcion {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.inputpagina {
+  width: 250px;
+  height: 30px;
+}
+.buttonpagina {
+  width: 50px;
+  height: 30px;
+  background-color: rgb(247, 245, 114);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.buttonpagina:hover {
+  background-color: aliceblue;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 20px;
+}
+
+#carrito {
+  background: rgb(240, 219, 139);
+  background: linear-gradient(
+    90deg,
+    rgba(240, 219, 139, 1) 0%,
+    rgba(213, 89, 231, 0.9917717086834734) 100%
+  );
+
+  width: 800px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around; 
+  margin-left: 30px;
+}
+
+.itemcarrito {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 2px;
+}
+.boton {
+  background-color: rgb(227, 247, 114);
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 30px;
+}
+.descripcionde_felicidades {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
